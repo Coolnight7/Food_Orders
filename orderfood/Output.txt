@@ -1,0 +1,221 @@
+// Sample Output:
+
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+1
+Enter Customer id , name and phone : 
+101 Jaya 1234512345
+Hibernate: 
+    insert
+    into
+        myCustomers
+        (cname, cphone, custId)
+    values
+        (?, ?, ?)
+(^ - ^) Customer added !
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+1
+Enter Customer id , name and phone :
+102 Ben 123467890
+Hibernate:
+    insert
+    into
+        myCustomers
+        (cname, cphone, custId)
+    values
+        (?, ?, ?)
+(^ - ^) Customer added !
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+4
+Hibernate: 
+    select
+        c1_0.custId,
+        c1_0.cname,
+        c1_0.cphone
+    from
+        myCustomers c1_0
+ _____= Customers =_____
+101 = Jaya ph.no: 1234512345
+102 = Ben ph.no: 123467890
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+2
+Enter Menu item id , name and price :
+001 Dal-Bhat 30
+Hibernate:
+    insert
+    into
+        myMenu
+        (iName, iPrice, itemId)
+    values
+        (?, ?, ?)
+(^ - ^) Menu item added !
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+2
+Enter Menu item id , name and price :
+002 Burger 50
+Hibernate:
+    insert
+    into
+        myMenu
+        (iName, iPrice, itemId)
+    values
+        (?, ?, ?)
+(^ - ^) Menu item added !
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+5
+Hibernate:
+    select
+        m1_0.itemId,
+        m1_0.iName,
+        m1_0.iPrice
+    from
+        myMenu m1_0
+ @_____*= Menu Items =*_____@
+1 = Dal-Bhat Rs: 30.0
+2 = Burger Rs: 50.0
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+3
+Hibernate:
+    select
+        c1_0.custId,
+        c1_0.cname,
+        c1_0.cphone
+    from
+        myCustomers c1_0
+Hibernate:
+    select
+        m1_0.itemId,
+        m1_0.iName,
+        m1_0.iPrice
+    from
+        myMenu m1_0
+==== Available Customers ====
+101 = Jaya ph.no: 1234512345
+102 = Ben ph.no: 123467890
+Enter Customer id:
+101
+==== Menu Items ====
+1 = Dal-Bhat Rs: 30.0
+2 = Burger Rs: 50.0
+Enter Menu item id and quantity:
+1
+3
+Hibernate:
+    insert
+    into
+        myOrders
+        (cust_id, meItId, quantity, orderId)
+    values
+        (?, ?, ?, ?)
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+6
+Enter customer id:
+101
+Hibernate:
+    select
+        c1_0.custId,
+        c1_0.cname,
+        c1_0.cphone
+    from
+        myCustomers c1_0
+    where
+        c1_0.custId=?
+Hibernate: 
+    select
+        o1_0.orderId,
+        o1_0.cust_id,
+        o1_0.meItId,
+        o1_0.quantity
+    from
+        myOrders o1_0
+    where
+        o1_0.cust_id=?
+Hibernate:
+    select
+        m1_0.itemId,
+        m1_0.iName,
+        m1_0.iPrice
+    from
+        myMenu m1_0
+    where
+        m1_0.itemId=?
+==== Orders for : Jaya ====
+Order: 1
+Customer: Jaya
+Item: Dal-Bhat
+Qty: 3
+Total Pri: 90.0
+====== Food Ordering System ======
+1. add customer
+2. add menu item
+3. place order
+4. view customers
+5. view menu
+6. view my order
+7. exit
+=== Enter your choice === ->
+7
+===== Thank you ! Visit again ! =====

@@ -70,7 +70,7 @@ Added via `pom.xml`:
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
 </properties>
